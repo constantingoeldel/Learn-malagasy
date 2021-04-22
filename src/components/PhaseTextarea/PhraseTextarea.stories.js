@@ -4,10 +4,9 @@ import { View } from 'react-native';
 
 import { storiesOf } from '@storybook/react-native';
 
-import MyComponent from './MyComponent';
+import PhraseTextarea from "./PhraseTextarea";
 
 
 storiesOf('Example', module)
   .addDecorator(story => <View>{story()}</View>)
-  .add('Jacquit', () => <MyComponent MyText= {'My name is Jacquit.'} />)
-  .add('Location.', () => <MyComponent MyText= {'I am from Andilamena.'}/>)
+  .add('Jacquit', () => <PhraseTextarea MyText= {'My name is Jacquit.'} />)
