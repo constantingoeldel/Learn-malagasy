@@ -1,13 +1,16 @@
-// components/Task.js
-import * as React from 'react';
+import React, {useState} from 'react';
 import { SafeAreaView, TextInput, StyleSheet } from 'react-native';
-// import { styles } from '../constants/globalStyles';
 
-export default function PhraseTextarea({MyText}) {
-
+export default function PhraseTextarea({mytext}) {  
   return (
     <SafeAreaView >
-      <TextInput value={MyText} style={styles.input} editable = {false} />
+      <TextInput 
+        style={styles.input} 
+        // onChangeText={text => setTextInput(text)} 
+        value={mytext}
+        // editable = {true}
+        // placeholder="Enter here" 
+      />
     </SafeAreaView>
   );
 }
@@ -32,3 +35,4 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   }
 })
+
