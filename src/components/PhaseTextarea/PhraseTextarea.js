@@ -1,12 +1,14 @@
 import * as React from 'react';
-import { Text, SafeAreaView, TextInput } from 'react-native';
+import { SafeAreaView, TextInput } from 'react-native';
 
-export default function MyComponent({MyText}) {
+export default function MyComponent() {
   const [phraseTextarea, setPhraseTextarea] = useState("");
 
   return (
     <SafeAreaView >
-      <TextInput onChangeText={(evt) => setPhraseTextarea(evt.target.value)} />
+      <TextInput 
+        // onChangeText={(e) => setPhraseTextarea(e.target.value)} 
+      />
     </SafeAreaView>
   );
 }

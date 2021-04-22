@@ -5,14 +5,14 @@
 
 function loadStories() {
   require('../src/components/Example/Example.stories');
-  require('../src/components/MyComponent/PhraseTextarea.stories');
+  require('../src/components/PhaseTextarea/PhraseTextarea.stories');
   require('./stories/Button/Button.stories');
   require('./stories/Welcome/Welcome.stories');
 }
 
 const stories = [
   '../src/components/Example/Example.stories',
-  '../src/components/MyComponent/PhraseTextarea.stories',
+  '../src/components/PhaseTextarea/PhraseTextarea.stories',
   './stories/Button/Button.stories',
   './stories/Welcome/Welcome.stories',
 ];
