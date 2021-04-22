@@ -3,7 +3,7 @@ import * as React from 'react';
 import { SafeAreaView, TextInput, StyleSheet } from 'react-native';
 // import { styles } from '../constants/globalStyles';
 
-export default function Example({MyText}) {
+export default function PhraseTextarea({MyText}) {
 
   return (
     <SafeAreaView >
