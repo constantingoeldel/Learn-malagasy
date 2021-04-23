@@ -1,38 +1,43 @@
-import React, {useState} from 'react';
-import { SafeAreaView, TextInput, StyleSheet } from 'react-native';
-
-export default function PhraseTextarea({mytext}) {  
+import * as React from 'react';
+import {TextInput, SafeAreaView, StyleSheet} from 'react-native';
+const styles = StyleSheet.create({
+  container: {
+    height: 100,
+    marginVertical: 0,
+    marginHorizontal: 'auto',
+    backgroundColor: '#fff',
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderStyle: 'solid',
+    borderColor: '#E5E5E5',
+    borderWidth: 1,
+  },
+  input: {
+    color: '#111827',
+  },
+  textarea: {
+    color: '#111827',
+    maxWidth: 360,
+    marginHorizontal: 'auto',
+    fontSize: 20,
+    lineHeight: 24.3,
+  },
+});
+export default function PhraseTextarea({
+  phrase,
+  editable,
+  onChange = () => null,
+}) {
   return (
-    <SafeAreaView >
-      <TextInput 
-        style={styles.input} 
-        // onChangeText={text => setTextInput(text)} 
-        value={mytext}
-        // editable = {true}
-        // placeholder="Enter here" 
+    <SafeAreaView style={styles.container}>
+      <TextInput
+        style={editable ? styles.input : styles.textarea}
+        value={phrase}
+        editable={editable}
+        onChangeText={onChange}
+        multiline={true}
+        placeholder={'Enter here'}
       />
     </SafeAreaView>
   );
 }
-
-const styles = StyleSheet.create({
-  input: {
-    // font-family: Inter;
-    fontStyle: 'normal',
-    fontWeight: 'normal',
-    color: '#111827',
-    lineHeight: 24,
-    fontSize: 20,
-    paddingTop: 41,
-    paddingBottom: 35,
-    marginLeft: 23,
-    marginRight: 23,
-    marginTop: 15,
-    marginBottom: 37,
-    backgroundColor: '#FFFFFF',
-    borderWidth: 1,
-    borderRadius: 3,
-    textAlign: 'center',
-  }
-})
-

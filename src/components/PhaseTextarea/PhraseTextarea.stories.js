@@ -1,35 +1,28 @@
-
 import * as React from 'react';
-import { View } from 'react-native';
-
-import { storiesOf } from '@storybook/react-native';
-
-import PhraseTextarea from "./PhraseTextarea";
-
-function TextControlledInput() {
-  const [textInput, setTextInput] = useState("");
-
+import {View} from 'react-native';
+import {storiesOf} from '@storybook/react-native';
+import PhraseTextarea from './PhraseTextarea';
+function Edit() {
+  const [text, setText] = React.useState('');
   return (
     <PhraseTextarea
-      placeholder="Enter here"
-      multiline={true}
-      number={4}
+      phrase={text}
+      editable={true}
+      onChange={input => setText(input)}
     />
-  )
-
+  );
 }
-
-function TextUncontrolledInput() {
-  return (
-    <PhraseTextarea
-      value="roa ambin'ny folo"
-      multiline={4}
-    />
-  )
-
-}
-
 storiesOf('PhraseTextarea', module)
-  .addDecorator(story => <View>{story()}</View>)
-  .add('uneditable', () => <TextUncontrolledInput/>)
-  .add('editable', () => <TextControlledInput/>) 
+  .addDecorator(story => <View style={{padding: 23}}>{story()}</View>)
+  .add('editable textInput', () => <Edit />)
+  .add('uneditable textInput', () => (
+    <PhraseTextarea phrase={'a word word'} editable={false} />
+  ))
+  .add('uneditable and longer ', () => (
+    <PhraseTextarea
+      phrase={
+        'Longer phrase Longer phrase Longer phrase Longer phrase Longer phrase'
+      }
+      editable={false}
+    />
+  ));
