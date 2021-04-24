@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { Text, StyleSheet} from 'react-native';
 import { TouchableHighlight } from 'react-native';
 export default NextButton = ({onPress = () => {}, children = '', disabled}) => {
+  console.log(disabled);
   return (
     <TouchableHighlight 
       onPress={onPress} 
