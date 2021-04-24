@@ -8,7 +8,6 @@ export default ActionButton = ({onPress = () => {}, children = ''}) => {
       onPress={onPress}  
       style={styles.btn}>
       <Text style={styles.text}>{children}</Text>
-      <Image />
     </TouchableHighlight>
   );
 };

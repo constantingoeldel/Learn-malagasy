@@ -10,41 +10,50 @@ storiesOf('ActionButton', module)
     return (
       <ActionButton onPress={alert('clicked learn')} >
         <Text style={styles.learnbtn}>Learn</Text>
-        <svg width="16" height="16" viewBox="0 0 16 16" fill="black" xmlns="http://www.w3.org/2000/svg">
-          <path d="M8 0L6.59 1.41L12.17 7H0V9H12.17L6.59 14.59L8 16L16 8L8 0Z" fill="black"/>
-        </svg>
-        {/* <Image source={require('./Icons/Vector1.svg')}/> */}
+        <Image style={styles.vect1} source={require("./Icons/Vect1.png")}/>
       </ActionButton>
     )
-  })
-  
+  })  
   .add('Pick', () => (
     <ActionButton onPress={alert('clicked Pick')} >
       <Text style={styles.learnbtn}>Pick</Text>
+      <Image style={styles.vect1} source={require("./Icons/Vect1.png")}/>
     </ActionButton>
   ))
   .add('Correct', () => (
     <ActionButton onPress={alert('clicked Correct')} >
       <Text style={styles.correctbtn}>Correct</Text>
+      <Image style={styles.vect2} source={require("./Icons/Vect2.png")}/>
     </ActionButton>
   ))
   .add('Wrong', () => (
     <ActionButton onPress={alert('clicked Wrong')} >
       <Text style={styles.wrongbtn}>Wrong</Text>
+      <Image style={styles.vect3} source={require("./Icons/Vect3.png")}/>
     </ActionButton>
   ))
 
 const styles = StyleSheet.create({
   learnbtn: {
     color: '#06B6D4',
-    paddingRight: 10,
   },
   correctbtn: {
     color: "#06D440",
-    paddingRight: 10,
   },
   wrongbtn: {
     color: "#D4068E",
-    paddingRight: 10,
   },
+  vect1: {
+    width: 16,
+    height: 16,
+    margin: 10,
+  },
+  vect2: {
+    width: 17.6,
+    height: 13.4,
+  },
+  vect3: {
+    width: 14,
+    height: 14,
+  }
 })
