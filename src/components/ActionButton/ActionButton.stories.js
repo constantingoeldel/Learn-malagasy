@@ -46,7 +46,6 @@ const styles = StyleSheet.create({
   vect1: {
     width: 16,
     height: 16,
-    margin: 10,
   },
   vect2: {
     width: 17.6,
