@@ -1,6 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+<<<<<<< HEAD
+import {Text, StyleSheet, Image} from 'react-native';
+=======
 import {Text, StyleSheet} from 'react-native';
+>>>>>>> 521428bd4c888c329a41ac197125c0236970af7c
 import {TouchableHighlight} from 'react-native';
 export default ActionButton = ({onPress = () => {}, children = ''}) => {
   return (
