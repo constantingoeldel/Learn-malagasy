@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {Text, StyleSheet} from 'react-native';
 import {TouchableHighlight} from 'react-native';
-export default ActionButton = ({onPress, children = ''}) => {
+export default ActionButton = ({onPress = () => {}, children = ''}) => {
   return (
     <TouchableHighlight onPress={onPress} style={styles.btn}>
       <Text style={styles.text}>{children}</Text>
