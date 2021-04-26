@@ -1,7 +1,6 @@
 import { storiesOf } from '@storybook/react-native';
 import React from 'react';
 import ToolButton from './ToolButton';
-import { StyleSheet } from 'react-native';
 import CenterView from '../../../storybook/stories/CenterView';
 import PlusIcon from '../Icons/plus.svg';
 import Correct  from '../Icons/correct.svg';
