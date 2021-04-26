@@ -4,38 +4,20 @@ import { Text, StyleSheet} from 'react-native';
 import { TouchableHighlight } from 'react-native';
 export default ToolButton = ({onPress = () => {}, children = ''}) => {
   return (
-    <TouchableHighlight onPress={onPress}>
-      <Text style={styles.text}>{children}</Text>
+    <TouchableHighlight onPress={onPress} style={styles.btn}>
+      <Text>{children}</Text>
     </TouchableHighlight>
   );
 };
 
 const styles = StyleSheet.create({
-    ablebtntext: {
-      fontSize: 16,
-      lineHeight: 19,
-      fontWeight: '600',
-      fontStyle: 'normal',
-      // fontFamily: "Inter",
-    },
-    ablebtn: {
-      paddingTop: 10,
-      paddingLeft: 27,
-      borderRadius: 30,
-      paddingRight: 27,
-      paddingBottom: 10,
-      backgroundColor: "#06B6D4",
-    },
-    disablebtn: {
-      paddingTop: 10,
-      borderWidth: 1,
-      paddingLeft: 27,
-      borderRadius: 30,
-      paddingRight: 27,
-      paddingBottom: 10,
-      borderColor: "#06B6D4",
-      backgroundColor: "#F9F9F9",
-    }
+  btn: {
+    backgroundColor: '#06B6D4',
+    borderRadius: 100,
+    padding: 13,
+    width: 40,
+    height: 40,
+  }
 })
 
 ToolButton.defaultProps = {
