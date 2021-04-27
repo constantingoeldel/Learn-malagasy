@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Text, StyleSheet} from 'react-native';
-import { TouchableHighlight } from 'react-native';
+import {Text, StyleSheet} from 'react-native';
+import {TouchableHighlight} from 'react-native';
 export default ToolButton = ({onPress = () => {}, children = ''}) => {
   return (
     <TouchableHighlight onPress={onPress} style={styles.btn}>
@@ -17,8 +17,8 @@ const styles = StyleSheet.create({
     padding: 13,
     width: 40,
     height: 40,
-  }
-})
+  },
+});
 
 ToolButton.defaultProps = {
   children: null,
@@ -29,4 +29,3 @@ ToolButton.propTypes = {
   children: PropTypes.node,
   onPress: PropTypes.func,
 };
-
