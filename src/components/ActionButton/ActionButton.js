@@ -2,7 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {StyleSheet, Text, TouchableOpacity} from 'react-native';
 
-export default function Button({onPress, text, textColor, children}) {
+export default function Button({
+  onPress = () => {},
+  text,
+  textColor,
+  children,
+}) {
   return (
     <TouchableOpacity style={styles.btnContainerStyle} onPress={onPress}>
       <Text style={[styles.textStyle, {color: textColor}]}>{text}</Text>
