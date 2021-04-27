@@ -8,7 +8,7 @@ export default NextButton = ({onPress = () => {}, children = '', disabled}) => {
     <TouchableHighlight
       onPress={onPress}
       disabled={disabled}
-      style={disabled ? styles.disablebtn : styles.ablebtn}>
+      style={[disabled ? styles.disablebtn : styles.ablebtn, styles.btn]}>
       <Text style={styles.text}>{children}</Text>
     </TouchableHighlight>
   );
@@ -22,21 +22,20 @@ const styles = StyleSheet.create({
     fontStyle: 'normal',
     // fontFamily: "Inter",
   },
-  ablebtn: {
+  btn: {
+    width: 90,
+    height: 40,
     paddingTop: 10,
     paddingLeft: 27,
     borderRadius: 30,
     paddingRight: 27,
     paddingBottom: 10,
+  },
+  ablebtn: {
     backgroundColor: '#06B6D4',
   },
   disablebtn: {
-    paddingTop: 10,
     borderWidth: 1,
-    paddingLeft: 27,
-    borderRadius: 30,
-    paddingRight: 27,
-    paddingBottom: 10,
     borderColor: '#06B6D4',
     backgroundColor: '#F9F9F9',
   },
@@ -45,11 +44,9 @@ const styles = StyleSheet.create({
 NextButton.defaultProps = {
   children: null,
   onPress: () => {},
-  desabled: null,
 };
 
 NextButton.propTypes = {
   children: PropTypes.node,
   onPress: PropTypes.func,
-  disabled: PropTypes.boolean,
 };
