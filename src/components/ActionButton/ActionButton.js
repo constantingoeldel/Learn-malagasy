@@ -1,33 +1,39 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {Text, StyleSheet} from 'react-native';
-import {TouchableHighlight} from 'react-native';
+import {StyleSheet, Text, TouchableOpacity} from 'react-native';
 
-export default function ActionButton({onPress = () => {}, children = ''}) {
+export default function Button({onPress, text, textColor, children}) {
   return (
-    <TouchableHighlight onPress={onPress}>
-      <Text style={styles.text}>{children}</Text>
-    </TouchableHighlight>
+    <TouchableOpacity style={styles.btnContainerStyle} onPress={onPress}>
+      <Text style={[styles.textStyle, {color: textColor}]}>{text}</Text>
+      {children}
+    </TouchableOpacity>
   );
 }
 
 const styles = StyleSheet.create({
-  text: {
+  btnContainerStyle: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  textStyle: {
     fontSize: 16,
     lineHeight: 19,
+    paddingRight: 10,
     fontWeight: '600',
-    textAlign: 'center',
     fontStyle: 'normal',
-    // fontFamily: "Inter",
+    textAlign: 'center',
   },
 });
 
-ActionButton.defaultProps = {
-  children: null,
+Button.defaultProps = {
+  text: null,
   onPress: () => {},
+  children: null,
 };
 
-ActionButton.propTypes = {
-  children: PropTypes.node,
+Button.propTypes = {
+  text: PropTypes.node,
   onPress: PropTypes.func,
+  children: PropTypes.node,
 };
