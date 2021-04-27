@@ -15,7 +15,7 @@ export default NextButton = ({onPress = () => {}, children = '', disabled}) => {
 };
 
 const styles = StyleSheet.create({
-  ablebtntext: {
+  text: {
     fontSize: 16,
     lineHeight: 19,
     fontWeight: '600',
@@ -45,9 +45,11 @@ const styles = StyleSheet.create({
 NextButton.defaultProps = {
   children: null,
   onPress: () => {},
+  desabled: null,
 };
 
 NextButton.propTypes = {
   children: PropTypes.node,
   onPress: PropTypes.func,
+  disabled: PropTypes.boolean,
 };
