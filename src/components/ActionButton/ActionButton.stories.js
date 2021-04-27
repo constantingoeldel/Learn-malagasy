@@ -47,6 +47,6 @@ const styels = StyleSheet.create({
   btnStyle: {
     padding: 20,
     flexDirection: 'row',
-    justifyContent: 'center',
+    justifyContent: 'flex-end',
   },
 });
