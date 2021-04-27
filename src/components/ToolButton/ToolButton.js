@@ -2,7 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {Text, StyleSheet} from 'react-native';
 import {TouchableHighlight} from 'react-native';
-export default ToolButton = ({onPress, children = ''}) => {
+export default ToolButton = ({onPress = () => {}, children = ''}) => {
+  console.log(onPress);
   return (
     <TouchableHighlight onPress={onPress} style={styles.btn}>
       <Text>{children}</Text>
