@@ -23,6 +23,9 @@ const styles = StyleSheet.create({
     // fontFamily: "Inter",
   },
   ablebtn: {
+    width: 90,
+    margin: 20,
+    height: 40,
     paddingTop: 10,
     paddingLeft: 27,
     borderRadius: 30,
@@ -31,6 +34,9 @@ const styles = StyleSheet.create({
     backgroundColor: '#06B6D4',
   },
   disablebtn: {
+    width: 90,
+    height: 40,
+    margin: 20,
     paddingTop: 10,
     borderWidth: 1,
     paddingLeft: 27,
@@ -45,11 +51,9 @@ const styles = StyleSheet.create({
 NextButton.defaultProps = {
   children: null,
   onPress: () => {},
-  desabled: null,
 };
 
 NextButton.propTypes = {
   children: PropTypes.node,
   onPress: PropTypes.func,
-  disabled: PropTypes.boolean,
 };
