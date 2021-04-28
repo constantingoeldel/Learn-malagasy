@@ -6,7 +6,7 @@ import Correct from '../Icons/correct.svg';
 import Doublecorrect from '../Icons/doublecorrect.svg';
 import Back from '../Icons/back.svg';
 import Switch from '../Icons/switchcolor.svg';
-import {View} from 'react-native';
+import {View, StyleSheet} from 'react-native';
 
 storiesOf('ToolButton', module)
   .addDecorator(getStory => <View>{getStory()}</View>)
@@ -17,21 +17,21 @@ storiesOf('ToolButton', module)
   ))
   .add('correctbtn', () => (
     <ToolButton onPress={() => alert('clicked Correct')}>
-      <Correct width={14} height={14} fill="#000" />
+      <Correct width={17} height={13} fill="#000" />
     </ToolButton>
   ))
   .add('doublecorrectbtn', () => (
     <ToolButton onPress={() => alert('clicked Doublecorrect')}>
-      <Doublecorrect width={14} height={14} fill="#000" />
+      <Doublecorrect width={23} height={13} fill="#000" />
     </ToolButton>
   ))
   .add('backbtn', () => (
     <ToolButton onPress={() => alert('clicked back')}>
-      <Back width={14} height={14} fill="#000" />
+      <Back width={7} height={12} fill="#000" />
     </ToolButton>
   ))
   .add('switch', () => (
     <ToolButton onPress={() => alert('clicked switch')}>
-      <Switch width={14} height={14} fill="#000" />
+      <Switch width={22} height={22} fill="#000" />
     </ToolButton>
   ));
