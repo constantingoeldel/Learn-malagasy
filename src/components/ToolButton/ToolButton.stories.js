@@ -1,15 +1,15 @@
 import {storiesOf} from '@storybook/react-native';
 import React from 'react';
 import ToolButton from './ToolButton';
-import CenterView from '../../../storybook/stories/CenterView';
 import PlusIcon from '../Icons/plus.svg';
 import Correct from '../Icons/correct.svg';
 import Doublecorrect from '../Icons/doublecorrect.svg';
 import Back from '../Icons/back.svg';
 import Switch from '../Icons/switchcolor.svg';
+import {View} from 'react-native';
 
 storiesOf('ToolButton', module)
-  .addDecorator(getStory => <CenterView>{getStory()}</CenterView>)
+  .addDecorator(getStory => <View>{getStory()}</View>)
   .add('plusbtn', () => (
     <ToolButton onPress={() => alert('clicked PlusIcon')}>
       <PlusIcon width={14} height={14} fill="#000" />
