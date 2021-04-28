@@ -23,12 +23,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: '#06B6D4',
   },
-  leftText: {
-    paddingRight: 5,
-  },
-  rightText: {
-    paddingLeft: 5,
-  },
   textStyle: {
     fontSize: 13,
     lineHeight: 16,
@@ -37,6 +31,12 @@ const styles = StyleSheet.create({
     fontStyle: 'normal',
     fontFamily: 'Inter',
     fontWeight: 'normal',
+  },
+  leftText: {
+    paddingRight: 5,
+  },
+  rightText: {
+    paddingLeft: 5,
   },
 });
 
