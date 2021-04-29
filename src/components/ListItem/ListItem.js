@@ -18,14 +18,10 @@ export default function Listitem({text}) {
 
 const styles = StyleSheet.create({
   container: {
-    marginLeft: 23,
-    marginRight: 23,
-    marginBottom: 15,
-    marginTop: 15,
-    backgroundColor: '#FFFFFF',
     borderBottomWidth: 1,
-    borderBottomColor: '#E5E5E5',
-    borderRadius: 3,
+    borderStyle: 'solid',
+    borderColor: '#E5E5E5',
+    backgroundColor: '#FFFFFF',
   },
   list: {
     paddingTop: 17,
@@ -33,7 +29,8 @@ const styles = StyleSheet.create({
     paddingRight: 20,
     paddingBottom: 17,
     flexDirection: 'row',
-    backgroundColor: '#FFFFFF',
+    borderBottomWidth: 1,
+    borderBottomColor: '#E5E5E5',
     justifyContent: 'space-between',
   },
   text: {
