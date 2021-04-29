@@ -6,17 +6,26 @@
  * @flow strict-local
  */
 
-import React from 'react';
+import * as React from 'react';
+import {NavigationContainer} from '@react-navigation/native';
+import {createStackNavigator} from '@react-navigation/stack';
 // import type {Node} from 'react';
-import {SafeAreaView, StyleSheet} from 'react-native';
-import HomeScreen from './src/components/HomeScreen/HomeScreen';
+import {StyleSheet, View} from 'react-native';
+import Learning from './src/Pages/Learning/Learning';
+import HomeScreen from './src/Pages/HomeScreen/HomeScreen';
+
+const Stack = createStackNavigator();
 
 // const App = (Node = () => {
 const App = (Node = () => {
   return (
-    <SafeAreaView>
-      <HomeScreen />
-    </SafeAreaView>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <HomeScreen />
+        {/* <Stack.Screen name="HomeScreen" component={HomeScreen} />
+        <Stack.Screen name="Learning" component={Learning} /> */}
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 });
 
