@@ -5,7 +5,7 @@ import HomeScreen from './HomeScreen';
 
 storiesOf('HomeScreen', module)
   .addDecorator(story => <View>{story()}</View>)
-  .add('List', () => (
+  .add('HomeScreen', () => (
     <View>
       <HomeScreen />
     </View>
