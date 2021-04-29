@@ -13,7 +13,6 @@ export default ToolButton = ({onPress = () => {}, children = ''}) => {
 const styles = StyleSheet.create({
   btn: {
     width: 40,
-    margin: 20,
     height: 40,
     paddingTop: 12,
     paddingLeft: 12,

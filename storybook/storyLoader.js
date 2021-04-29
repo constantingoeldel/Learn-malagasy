@@ -5,6 +5,7 @@
 
 function loadStories() {
   require('../src/components/ActionButton/ActionButton.stories');
+  require('../src/components/HomeScreen/HomeScreen.stories');
   require('../src/components/LanguageSwitcherButton/LanguageSwitcherButton.stories');
   require('../src/components/List/List.stories');
   require('../src/components/ListItem/ListItem.stories');
@@ -17,6 +18,7 @@ function loadStories() {
 
 const stories = [
   '../src/components/ActionButton/ActionButton.stories',
+  '../src/components/HomeScreen/HomeScreen.stories',
   '../src/components/LanguageSwitcherButton/LanguageSwitcherButton.stories',
   '../src/components/List/List.stories',
   '../src/components/ListItem/ListItem.stories',
