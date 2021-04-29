@@ -5,6 +5,7 @@ import {
   StyleSheet,
   FlatList,
   ScrollView,
+  Text,
 } from 'react-native';
 import Listitem from '../ListItem/ListItem';
 import {categories} from '../../data/categories.json';
@@ -15,6 +16,7 @@ import {categories} from '../../data/categories.json';
 export default function List({}) {
   return (
     <SafeAreaView>
+      <Text style={styles.title}>Select a category:</Text>
       <View>
         <FlatList
           style={styles.lists}
