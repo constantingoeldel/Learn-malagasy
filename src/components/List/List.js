@@ -1,5 +1,11 @@
 import React from 'react';
-import {SafeAreaView, Text, View, StyleSheet, FlatList} from 'react-native';
+import {
+  SafeAreaView,
+  View,
+  StyleSheet,
+  FlatList,
+  ScrollView,
+} from 'react-native';
 import Listitem from '../ListItem/ListItem';
 import {categories} from '../../data/categories.json';
 
@@ -10,16 +16,17 @@ export default function List({}) {
   return (
     <SafeAreaView>
       <View>
-        <Text style={styles.title}>Select a category:</Text>
+        <FlatList
+          style={styles.lists}
+          data={categories}
+          renderItem={({item, index}) => (
+            <ScrollView style={styles.scroll}>
+              <Listitem text={item.name.en} onRowPress={() => {}} />
+            </ScrollView>
+          )}
+          keyExtractor={item => item.id}
+        />
       </View>
-      <FlatList
-        style={styles.lists}
-        data={categories}
-        renderItem={({item, index}) => (
-          <Listitem text={item.name.en} onRowPress={() => {}} />
-        )}
-        keyExtractor={item => item.id}
-      />
     </SafeAreaView>
   );
 }
@@ -32,6 +39,7 @@ const styles = StyleSheet.create({
     borderColor: '#E5E5E5',
     marginLeft: 23,
     marginRight: 23,
+    height: 386,
   },
   title: {
     fontSize: 18,
