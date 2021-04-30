@@ -10,10 +10,12 @@ import {
 import Listitem from '../ListItem/ListItem';
 import {categories} from '../../data/categories.json';
 
-// page navigation
-// navigation.navigate;
+// import {ContextProvider} from '../GlobalContext/GlobalContext';
 
-export default function List({}) {
+// console.log(ContextProvider);
+// const [categories] = ContextProvider;
+
+export default function List({navigation}) {
   return (
     <SafeAreaView>
       <Text style={styles.title}>Select a category:</Text>
@@ -23,7 +25,10 @@ export default function List({}) {
           data={categories}
           renderItem={({item, index}) => (
             <ScrollView style={styles.scroll}>
-              <Listitem text={item.name.en} onRowPress={() => {}} />
+              <Listitem
+                text={item.name.en}
+                onRowPress={() => navigation.navigate('Learning')}
+              />
             </ScrollView>
           )}
           keyExtractor={item => item.id}

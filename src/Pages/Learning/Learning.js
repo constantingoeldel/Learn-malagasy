@@ -29,11 +29,15 @@ const Buttons = () => {
   );
 };
 
-export default function Learning({}) {
+export default function Learning({navigation}) {
   return (
     <SafeAreaView>
       <View>
-        <Buttons />
+        <Buttons
+          onPress={() => (
+            <Button onPress={() => navigation.navigate('HomeScreen')} />
+          )}
+        />
       </View>
       <View>
         <List />

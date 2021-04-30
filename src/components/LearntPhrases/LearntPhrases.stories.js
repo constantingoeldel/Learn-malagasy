@@ -1,12 +1,12 @@
 import React from 'react';
 import {View} from 'react-native';
 import {storiesOf} from '@storybook/react-native';
-import List from './List';
+import LearntPhrases from './LearntPhrases';
 
-storiesOf('List', module)
+storiesOf('LearntPhrases', module)
   .addDecorator(story => <View>{story()}</View>)
-  .add('List', () => (
+  .add('LearntPhrases', () => (
     <View>
-      <List />
+      <LearntPhrases />
     </View>
   ));

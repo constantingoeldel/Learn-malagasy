@@ -6,8 +6,8 @@ export default function SeenPhrase({}) {
   return (
     <SafeAreaView style={styles.container}>
       <View>
-        <Text style={styles.text}>Seen phrases:</Text>
-        <Listitem text={'35 words and phrases'} onRowPress={() => {}} />
+        <Text style={styles.text}>Learnt phrases:</Text>
+        <Listitem text={'10 words and phrases'} onRowPress={() => {}} />
       </View>
     </SafeAreaView>
   );
