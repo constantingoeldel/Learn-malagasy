@@ -5,18 +5,16 @@
  * @format
  * @flow strict-local
  */
-
 import React from 'react';
-// import type {Node} from 'react';
-import {SafeAreaView, StyleSheet} from 'react-native';
-import HomeScreen from './src/components/HomeScreen/HomeScreen';
+import {StyleSheet} from 'react-native';
+import {NavigationContainer} from '@react-navigation/native';
+import NavStack from './src/Pages/Navstack';
 
-// const App = (Node = () => {
 const App = (Node = () => {
   return (
-    <SafeAreaView>
-      <HomeScreen />
-    </SafeAreaView>
+    <NavigationContainer>
+      <NavStack />
+    </NavigationContainer>
   );
 });
 

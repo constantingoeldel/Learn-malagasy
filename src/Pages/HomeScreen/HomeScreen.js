@@ -1,13 +1,13 @@
 import React from 'react';
 import {SafeAreaView, StyleSheet, View} from 'react-native';
-import ToolButton from '../ToolButton/ToolButton';
-import LanguageSwitcherButton from '../LanguageSwitcherButton/LanguageSwitcherButton';
-import Plus from '../Icons/plus.svg';
-import Switch from '../Icons/Switch.svg';
-import Correct from '../Icons/correct.svg';
-import DoubleCorrect from '../Icons/doublecorrect.svg';
-import Switchcolor from '../Icons/switchcolor.svg';
-import List from '../List/List';
+import ToolButton from '../../components/ToolButton/ToolButton';
+import LanguageSwitcherButton from '../../components/LanguageSwitcherButton/LanguageSwitcherButton';
+import Plus from '../../components/Icons/plus.svg';
+import Switch from '../../components/Icons/Switch.svg';
+import Correct from '../../components/Icons/correct.svg';
+import DoubleCorrect from '../../components/Icons/doublecorrect.svg';
+import Switchcolor from '../../components/Icons/switchcolor.svg';
+import List from '../../components/List/List';
 
 const Buttons = () => {
   return (
