@@ -5,26 +5,15 @@
  * @format
  * @flow strict-local
  */
-
-import * as React from 'react';
+import React from 'react';
+import {StyleSheet} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
-import {createStackNavigator} from '@react-navigation/stack';
-// import type {Node} from 'react';
-import {StyleSheet, View} from 'react-native';
-import Learning from './src/Pages/Learning/Learning';
-import HomeScreen from './src/Pages/HomeScreen/HomeScreen';
+import NavStack from './src/Pages/Navstack';
 
-const Stack = createStackNavigator();
-
-// const App = (Node = () => {
 const App = (Node = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
-        <HomeScreen />
-        {/* <Stack.Screen name="HomeScreen" component={HomeScreen} />
-        <Stack.Screen name="Learning" component={Learning} /> */}
-      </Stack.Navigator>
+      <NavStack />
     </NavigationContainer>
   );
 });
