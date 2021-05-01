@@ -11,7 +11,7 @@ import HomeScreen from './src/Pages/HomeScreen/HomeScreen';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 
-import {ContextProvider} from './src/components/GlobalContext/GlobalContext';
+import {ContextProvider} from './src/components/GlobalContext/Context';
 
 const Stack = createStackNavigator();
 

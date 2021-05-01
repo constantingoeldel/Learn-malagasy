@@ -7,11 +7,11 @@ import Switch from '../../components/Icons/Switch.svg';
 import Switchcolor from '../../components/Icons/switchcolor.svg';
 import List from '../../components/List/List';
 
-const Buttons = () => {
+const Buttons = ({navigation}) => {
   return (
     <SafeAreaView style={styles.btns}>
       <View style={styles.btn}>
-        <ToolButton>
+        <ToolButton onPress={() => navigation.navigate('HomeScreen')}>
           <Back />
         </ToolButton>
       </View>
@@ -33,14 +33,7 @@ export default function Learning({navigation}) {
   return (
     <SafeAreaView>
       <View>
-        <Buttons
-          onPress={() => (
-            <Button onPress={() => navigation.navigate('HomeScreen')} />
-          )}
-        />
-      </View>
-      <View>
-        <List />
+        <Buttons navigation={navigation} />
       </View>
     </SafeAreaView>
   );

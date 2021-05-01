@@ -7,6 +7,9 @@ storiesOf('Listitem', module)
   .addDecorator(story => <View>{story()}</View>)
   .add('Learn Malagasy', () => (
     <View>
-      <Listitem text={'Learn Malagasy'} />
+      <Listitem
+        text={'Learn Malagasy'}
+        onPress={() => alert('I am clicked !')}
+      />
     </View>
   ));
