@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import {View} from 'react-native';
 import {storiesOf} from '@storybook/react-native';
 import Listitem from './ListItem';
@@ -7,6 +7,9 @@ storiesOf('Listitem', module)
   .addDecorator(story => <View>{story()}</View>)
   .add('Learn Malagasy', () => (
     <View>
-      <Listitem text={'Learn Malagasy'} />
+      <Listitem
+        text={'Learn Malagasy'}
+        onPress={() => alert('I am clicked !')}
+      />
     </View>
   ));

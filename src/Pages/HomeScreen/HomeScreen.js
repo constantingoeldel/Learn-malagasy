@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {SafeAreaView, StyleSheet, View} from 'react-native';
 import ToolButton from '../../components/ToolButton/ToolButton';
 import LanguageSwitcherButton from '../../components/LanguageSwitcherButton/LanguageSwitcherButton';
@@ -8,8 +8,10 @@ import Correct from '../../components/Icons/correct.svg';
 import DoubleCorrect from '../../components/Icons/doublecorrect.svg';
 import Switchcolor from '../../components/Icons/switchcolor.svg';
 import List from '../../components/List/List';
+import SeenPhrases from '../../components/SeenPhrases/SeenPhrases';
+import LearntPhrases from '../../components/LearntPhrases/LearntPhrases';
 
-const Buttons = () => {
+const Buttons = ({setIsEnglish}) => {
   return (
     <SafeAreaView style={styles.btns}>
       <View style={styles.btn}>
@@ -18,7 +20,7 @@ const Buttons = () => {
         </ToolButton>
       </View>
       <View style={styles.btn}>
-        <LanguageSwitcherButton>
+        <LanguageSwitcherButton onPress={() => setIsEnglish(false)}>
           <Switch />
         </LanguageSwitcherButton>
       </View>
@@ -41,20 +43,32 @@ const Buttons = () => {
   );
 };
 
-export default function HomeScreen({}) {
+export default function HomeScreen({navigation}) {
+  const [isEnglish, setIsEnglish] = useState(false);
+  console.log(isEnglish);
+
   return (
     <SafeAreaView>
       <View>
-        <Buttons />
+        <Buttons setIsEnglish={setIsEnglish} />
+      </View>
+      <View style={styles.space}>
+        <List navigation={navigation} isEnglish={isEnglish} />
       </View>
       <View>
-        <List />
+        <SeenPhrases />
+      </View>
+      <View>
+        <LearntPhrases />
       </View>
     </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
+  space: {
+    marginBottom: 15,
+  },
   btn: {
     marginRight: 10,
   },

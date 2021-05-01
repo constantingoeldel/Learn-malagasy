@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import {
   SafeAreaView,
   View,
@@ -8,12 +8,11 @@ import {
   Text,
 } from 'react-native';
 import Listitem from '../ListItem/ListItem';
-import {categories} from '../../data/categories.json';
+import {GlobalContext} from '../GlobalContext/Context';
 
-// page navigation
-// navigation.navigate;
-
-export default function List({}) {
+export default function List({navigation, isEnglish}) {
+  const {state} = useContext(GlobalContext);
+  const {categories} = state;
   return (
     <SafeAreaView>
       <Text style={styles.title}>Select a category:</Text>
@@ -23,7 +22,10 @@ export default function List({}) {
           data={categories}
           renderItem={({item, index}) => (
             <ScrollView style={styles.scroll}>
-              <Listitem text={item.name.en} onRowPress={() => {}} />
+              <Listitem
+                text={isEnglish ? item.name.ma : item.name.en}
+                onPress={() => navigation.navigate('Learning')}
+              />
             </ScrollView>
           )}
           keyExtractor={item => item.id}

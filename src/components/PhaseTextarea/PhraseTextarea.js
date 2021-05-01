@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import {TextInput, SafeAreaView, StyleSheet} from 'react-native';
 const styles = StyleSheet.create({
   container: {

@@ -1,14 +1,14 @@
-import * as React from 'react';
+import React from 'react';
 import ActionButton from '../ActionButton/ActionButton.js';
 import Vect1 from '../Icons/Vect1.svg';
 import {View, Text, StyleSheet, SafeAreaView} from 'react-native';
 
-export default function Listitem({text}) {
+export default function Listitem({text, onPress}) {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.list}>
         <Text style={styles.text}>{text}</Text>
-        <ActionButton text="Learn" textColor="#06B6D4">
+        <ActionButton text="Learn" textColor="#06B6D4" onPress={onPress}>
           <Vect1 />
         </ActionButton>
       </View>

@@ -1,7 +1,7 @@
-import {storiesOf} from '@storybook/react-native';
 import React from 'react';
-import {Text, StyleSheet, View} from 'react-native';
 import NextButton from './NextButton';
+import {storiesOf} from '@storybook/react-native';
+import {Text, StyleSheet, View} from 'react-native';
 
 storiesOf('NextButton', module)
   .addDecorator(getStory => <View>{getStory()}</View>)

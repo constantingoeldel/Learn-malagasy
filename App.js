@@ -6,35 +6,26 @@
  * @flow strict-local
  */
 import React from 'react';
-import {StyleSheet} from 'react-native';
+import Learning from './src/Pages/Learning/Learning';
+import HomeScreen from './src/Pages/HomeScreen/HomeScreen';
 import {NavigationContainer} from '@react-navigation/native';
-import NavStack from './src/Pages/Navstack';
+import {createStackNavigator} from '@react-navigation/stack';
 
-const App = (Node = () => {
+import {ContextProvider} from './src/components/GlobalContext/Context';
+
+const Stack = createStackNavigator();
+
+function App() {
   return (
-    <NavigationContainer>
-      <NavStack />
-    </NavigationContainer>
+    <ContextProvider>
+      <NavigationContainer>
+        <Stack.Navigator>
+          <Stack.Screen name="HomeScreen" component={HomeScreen} />
+          <Stack.Screen name="Learning" component={Learning} />
+        </Stack.Navigator>
+      </NavigationContainer>
+    </ContextProvider>
   );
-});
-
-const styles = StyleSheet.create({
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
-  },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-  },
-  highlight: {
-    fontWeight: '700',
-  },
-});
+}
 
 export default App;

@@ -1,12 +1,12 @@
-import {storiesOf} from '@storybook/react-native';
 import React from 'react';
+import Back from '../Icons/back.svg';
 import ToolButton from './ToolButton';
 import PlusIcon from '../Icons/plus.svg';
 import Correct from '../Icons/correct.svg';
-import Doublecorrect from '../Icons/doublecorrect.svg';
-import Back from '../Icons/back.svg';
 import Switch from '../Icons/switchcolor.svg';
 import {View, StyleSheet} from 'react-native';
+import {storiesOf} from '@storybook/react-native';
+import Doublecorrect from '../Icons/doublecorrect.svg';
 
 storiesOf('ToolButton', module)
   .addDecorator(getStory => <View>{getStory()}</View>)
