@@ -21,10 +21,15 @@ export default function List({navigation, isEnglish}) {
           style={styles.lists}
           data={categories}
           renderItem={({item, index}) => (
-            <ScrollView style={styles.scroll}>
+            <ScrollView>
               <Listitem
                 text={isEnglish ? item.name.ma : item.name.en}
-                onPress={() => navigation.navigate('Learning')}
+                onPress={() =>
+                  navigation.navigate('Learning', {
+                    text: `${item.name.mg}`,
+                    id: `${item.id}`,
+                  })
+                }
               />
             </ScrollView>
           )}
