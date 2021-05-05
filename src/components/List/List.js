@@ -21,10 +21,15 @@ export default function List({navigation, isEnglish}) {
           style={styles.lists}
           data={categories}
           renderItem={({item, index}) => (
-            <ScrollView style={styles.scroll}>
+            <ScrollView>
               <Listitem
                 text={isEnglish ? item.name.ma : item.name.en}
-                onPress={() => navigation.navigate('Learning')}
+                onPress={() =>
+                  navigation.navigate('Learning', {
+                    text: `${item.name.mg}`,
+                    id: `${item.id}`,
+                  })
+                }
               />
             </ScrollView>
           )}
@@ -43,7 +48,6 @@ const styles = StyleSheet.create({
     borderColor: '#E5E5E5',
     marginLeft: 23,
     marginRight: 23,
-    height: 386,
   },
   title: {
     fontSize: 18,

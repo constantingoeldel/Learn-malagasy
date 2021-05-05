@@ -5,11 +5,9 @@ import Listitem from './ListItem';
 
 storiesOf('Listitem', module)
   .addDecorator(story => <View>{story()}</View>)
-  .add('Learn Malagasy', () => (
-    <View>
-      <Listitem
-        text={'Learn Malagasy'}
-        onPress={() => alert('I am clicked !')}
-      />
-    </View>
+  .add('learn', () => (
+    <Listitem text={'learn'} onPress={() => alert('learn is clicked!')} />
+  ))
+  .add('pick', () => (
+    <Listitem text={'pick'} onPress={() => alert('pick is clicked!')} />
   ));
