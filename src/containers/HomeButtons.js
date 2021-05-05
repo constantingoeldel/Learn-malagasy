@@ -1,18 +1,18 @@
 import React from 'react';
 import {SafeAreaView, StyleSheet, View} from 'react-native';
-import ToolButton from '../../components/ToolButton/ToolButton';
-import LanguageSwitcherButton from '../../components/LanguageSwitcherButton/LanguageSwitcherButton';
-import Plus from '../../components/Icons/plus.svg';
-import Switch from '../../components/Icons/Switch.svg';
-import Correct from '../../components/Icons/correct.svg';
-import DoubleCorrect from '../../components/Icons/doublecorrect.svg';
-import Switchcolor from '../../components/Icons/switchcolor.svg';
+import ToolButton from '../components/ToolButton/ToolButton';
+import LanguageSwitcherButton from '../components/LanguageSwitcherButton/LanguageSwitcherButton';
+import Plus from '../icons/plus.svg';
+import Switch from '../icons/switch.svg';
+import Correct from '../icons/correct.svg';
+import DoubleCorrect from '../icons/doublecorrect.svg';
+import Switchcolor from '../icons/switchcolor.svg';
 
-export default function Buttons({setIsEnglish}) {
+const HomeBtns = ({setIsEnglish}) => {
   return (
     <SafeAreaView style={styles.btns}>
       <View style={styles.btn}>
-        <ToolButton>
+        <ToolButton onPress={() => alert('I am Plus btn')}>
           <Plus />
         </ToolButton>
       </View>
@@ -22,23 +22,23 @@ export default function Buttons({setIsEnglish}) {
         </LanguageSwitcherButton>
       </View>
       <View style={styles.btn}>
-        <ToolButton>
+        <ToolButton onPress={() => alert('I am correct btn')}>
           <Correct />
         </ToolButton>
       </View>
       <View style={styles.btn}>
-        <ToolButton>
+        <ToolButton onPress={() => alert('I am doublecorrect btn')}>
           <DoubleCorrect />
         </ToolButton>
       </View>
       <View>
-        <ToolButton>
+        <ToolButton onPress={() => alert('I am switchcolor')}>
           <Switchcolor />
         </ToolButton>
       </View>
     </SafeAreaView>
   );
-}
+};
 
 const styles = StyleSheet.create({
   btn: {
@@ -51,3 +51,5 @@ const styles = StyleSheet.create({
     marginBottom: 65,
   },
 });
+
+export default HomeBtns;

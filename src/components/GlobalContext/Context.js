@@ -1,22 +1,40 @@
 import {phrases} from '../../data/phrases.json';
 import {categories} from '../../data/categories.json';
-import React, {useState, useEffect, useReducer} from 'react';
+import React, {useReducer} from 'react';
 
 const GlobalContext = React.createContext();
-
-function reducer(state, action) {
-  switch (action.type) {
-  }
-}
 
 const initialState = {
   categories: categories,
   phrases: phrases,
-  // learnt: [],
-  // seen: [],
-  // all: [],
-  // language: ['en', 'mg'],
+  seenPhrase: [],
+  learntPhrases: [],
 };
+
+function reducer(state, action) {
+  switch (action.type) {
+    case LEARN_PHRASE:
+      return {
+        ...state,
+      };
+    default:
+      return state;
+  }
+}
+
+// export const AuthReducer = (state = initialState, action) => {
+//   switch (action.type) {
+//     case ACTION_TYPES.LOGIN:
+//       return {
+//         ...state,
+//         isAuth: true,
+//         username: action.username,
+//         token: action.token,
+//       };
+//     default:
+//       return state;
+//   }
+// };
 
 function ContextProvider({children}) {
   const [state, dispatch] = useReducer(reducer, initialState);

@@ -48,7 +48,6 @@ const styles = StyleSheet.create({
     borderColor: '#E5E5E5',
     marginLeft: 23,
     marginRight: 23,
-    height: 386,
   },
   title: {
     fontSize: 18,

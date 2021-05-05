@@ -1,12 +1,12 @@
 import React from 'react';
 import {SafeAreaView, StyleSheet, View} from 'react-native';
-import ToolButton from '../../components/ToolButton/ToolButton';
-import LanguageSwitcherButton from '../../components/LanguageSwitcherButton/LanguageSwitcherButton';
-import Back from '../../components/Icons/back.svg';
-import Switch from '../../components/Icons/Switch.svg';
-import Switchcolor from '../../components/Icons/switchcolor.svg';
+import ToolButton from '../components/ToolButton/ToolButton';
+import LanguageSwitcherButton from '../components/LanguageSwitcherButton/LanguageSwitcherButton';
+import Back from '../icons/back.svg';
+import Switch from '../icons/switch.svg';
+import Switchcolor from '../icons/switchcolor.svg';
 
-export default function Buttons({navigation}) {
+const LearningBtns = ({navigation}) => {
   return (
     <SafeAreaView style={styles.btns}>
       <View style={styles.btn}>
@@ -15,18 +15,18 @@ export default function Buttons({navigation}) {
         </ToolButton>
       </View>
       <View style={styles.btn}>
-        <ToolButton>
+        <ToolButton onPress={() => alert('I am here')}>
           <Switchcolor />
         </ToolButton>
       </View>
       <View>
-        <LanguageSwitcherButton>
+        <LanguageSwitcherButton onPress={() => alert('I am here')}>
           <Switch />
         </LanguageSwitcherButton>
       </View>
     </SafeAreaView>
   );
-}
+};
 
 const styles = StyleSheet.create({
   btn: {
@@ -38,3 +38,5 @@ const styles = StyleSheet.create({
     marginBottom: 65,
   },
 });
+
+export default LearningBtns;
