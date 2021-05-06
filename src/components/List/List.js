@@ -8,7 +8,7 @@ import {
   Text,
 } from 'react-native';
 import Listitem from '../ListItem/ListItem';
-import {GlobalContext} from '../../GlobalContext/GlobalContext';
+import {GlobalContext} from '../../globalContext/GlobalContext';
 
 function List({navigation, isEnglish}) {
   const {state} = useContext(GlobalContext);

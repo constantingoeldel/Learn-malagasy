@@ -4,7 +4,7 @@ import LearningButtons from '../containers/LearningButtons';
 import Listitem from '../components/ListItem/ListItem';
 import {SafeAreaView, StyleSheet, View, Text} from 'react-native';
 import PhraseTextarea from '../components/PhaseTextarea/PhraseTextarea';
-import {GlobalContext} from '../GlobalContext/GlobalContext';
+import {GlobalContext} from '../globalContext/GlobalContext';
 
 const Learning = ({navigation, route}) => {
   const {state} = useContext(GlobalContext);
@@ -12,51 +12,47 @@ const Learning = ({navigation, route}) => {
   const {phrases} = state;
   const {categories} = state;
 
-  console.log(categories);
-  console.log(phrases);
-
   const id = route.params.id;
 
   const categoriesList = categories?.find(item => item.id === id);
-  // const phraseId = categoriesList.phrasesIds.map(item => {
-  //   return item;
-  // });
-  console.log(categoriesList);
+  const phraseId = categoriesList.phrasesIds.map(item => {
+    return item;
+  });
 
-  //   const item1 = phraseId[Math.floor(Math.random() * phraseId.length)];
-  //   const item2 = phraseId[Math.floor(Math.random() * phraseId.length)];
-  //   const item3 = phraseId[Math.floor(Math.random() * phraseId.length)];
-  //   const item4 = phraseId[Math.floor(Math.random() * phraseId.length)];
+  const item1 = phraseId[Math.floor(Math.random() * phraseId.length)];
+  const item2 = phraseId[Math.floor(Math.random() * phraseId.length)];
+  const item3 = phraseId[Math.floor(Math.random() * phraseId.length)];
+  const item4 = phraseId[Math.floor(Math.random() * phraseId.length)];
 
-  //   if (
-  //     item1 === item2 ||
-  //     item1 === item3 ||
-  //     item1 === item4 ||
-  //     item2 === item3 ||
-  //     item2 === item4 ||
-  //     item3 === item4
-  //   ) {
-  //     return (
-  //       item1 == !item2 ||
-  //       item1 == !item3 ||
-  //       item1 == !item4 ||
-  //       item2 == !item3 ||
-  //       item2 == !item4 ||
-  //       item3 == !item4
-  //     );
-  //   }
+  if (
+    item1 === item2 ||
+    item1 === item3 ||
+    item1 === item4 ||
+    item2 === item3 ||
+    item2 === item4 ||
+    item3 === item4
+  ) {
+    return (
+      item1 == !item2 ||
+      item1 == !item3 ||
+      item1 == !item4 ||
+      item2 == !item3 ||
+      item2 == !item4 ||
+      item3 == !item4
+    );
+  }
 
-  //   const Item1 = phrases && phrases.find(itm => itm.id === item1).name.en;
-  //   const Item2 = phrases && phrases.find(itm => itm.id === item2).name.en;
-  //   const Item3 = phrases && phrases.find(itm => itm.id === item3).name.en;
-  //   const Item4 = phrases && phrases.find(itm => itm.id === item4).name.en;
+  const Item1 = phrases.find(itm => itm.id === item1).name.en;
+  const Item2 = phrases.find(itm => itm.id === item2).name.en;
+  const Item3 = phrases.find(itm => itm.id === item3).name.en;
+  const Item4 = phrases.find(itm => itm.id === item4).name.en;
 
-  //   const groupItems = [item1, item2, item3, item4];
-  //   const singleItem = groupItems[Math.floor(Math.random() * groupItems.length)];
-  //   const singleOption = phrases.find(itm => itm.id === singleItem);
+  const groupItems = [item1, item2, item3, item4];
+  const singleItem = groupItems[Math.floor(Math.random() * groupItems.length)];
+  const singleOption = phrases.find(itm => itm.id === singleItem);
 
-  //   const ItemsArray = [Item1, Item4, Item2, Item3];
-  //   const randomSolutions = Shuffle(ItemsArray);
+  const ItemsArray = [Item1, Item4, Item2, Item3];
+  const randomSolutions = Shuffle(ItemsArray);
 
   return (
     <SafeAreaView style={styles.container}>
@@ -68,9 +64,9 @@ const Learning = ({navigation, route}) => {
           Category: {category}
         </Text>
         <Text style={[styles.text, styles.phraseText]}>The phrase:</Text>
-        {/* <PhraseTextarea editable={false} phrase={singleOption?.name.mg} /> */}
+        <PhraseTextarea editable={false} phrase={singleOption?.name.mg} />
       </View>
-      {/*<View>
+      <View>
         <Text style={[styles.text, styles.phraseText]}>Pick a solution:</Text>
         {randomSolutions &&
           randomSolutions.map((item, index) => {
@@ -86,7 +82,7 @@ const Learning = ({navigation, route}) => {
               </View>
             );
           })}
-      </View> */}
+      </View>
     </SafeAreaView>
   );
 };
