@@ -1,9 +1,17 @@
 import React, {useState} from 'react';
 import List from '../components/List/List';
-import HomeButtons from '../containers/HomeButtons';
+import HomeButtons from '../screenButtonsContainer/HomeButtons';
 import {SafeAreaView, StyleSheet, View} from 'react-native';
+import SeenPhrases from '../components/SeenPhrases/SeenPhrases';
+import LearntPhrases from '../components/LearntPhrases/LearntPhrases';
 
-function HomeScreen({navigation}) {
+const styles = StyleSheet.create({
+  space: {
+    marginBottom: 15,
+  },
+});
+
+export default function HomeScreen({navigation}) {
   const [isEnglish, setIsEnglish] = useState(false);
 
   return (
@@ -14,14 +22,12 @@ function HomeScreen({navigation}) {
       <View style={styles.space}>
         <List navigation={navigation} isEnglish={isEnglish} />
       </View>
+      <View style={styles.space}>
+        <SeenPhrases />
+      </View>
+      <View>
+        <LearntPhrases />
+      </View>
     </SafeAreaView>
   );
 }
-
-const styles = StyleSheet.create({
-  space: {
-    marginBottom: 15,
-  },
-});
-
-export default HomeScreen;

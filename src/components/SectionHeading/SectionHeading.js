@@ -1,14 +1,6 @@
 import React from 'react';
 import {Text, SafeAreaView, StyleSheet} from 'react-native';
 
-export default function SectionHeading({text}) {
-  return (
-    <SafeAreaView>
-      <Text style={styles.textHeader}>{text}</Text>
-    </SafeAreaView>
-  );
-}
-
 const styles = StyleSheet.create({
   textHeader: {
     fontFamily: 'Inter',
@@ -26,3 +18,11 @@ const styles = StyleSheet.create({
     borderColor: '#E5E5E5',
   },
 });
+
+export default function SectionHeading({text}) {
+  return (
+    <SafeAreaView>
+      <Text style={styles.textHeader}>{text}</Text>
+    </SafeAreaView>
+  );
+}

@@ -2,23 +2,6 @@ import React from 'react';
 import {Text, StyleSheet} from 'react-native';
 import {TouchableHighlight} from 'react-native';
 
-export default NextButton = ({disabled, text, onPress}) => {
-  return (
-    <TouchableHighlight
-      onPress={onPress}
-      disabled={disabled}
-      style={[disabled ? styles.disablebtn : styles.ablebtn, styles.btn]}>
-      <Text
-        style={[
-          styles.text,
-          disabled ? styles.disabledbtntext : styles.abledbtntext,
-        ]}>
-        {text}
-      </Text>
-    </TouchableHighlight>
-  );
-};
-
 const styles = StyleSheet.create({
   disabledbtntext: {
     color: '#06B6D4',
@@ -31,7 +14,6 @@ const styles = StyleSheet.create({
     lineHeight: 19,
     fontWeight: '600',
     fontStyle: 'normal',
-    // fontFamily: "Inter",
   },
   btn: {
     width: 90,
@@ -52,3 +34,20 @@ const styles = StyleSheet.create({
     backgroundColor: '#F9F9F9',
   },
 });
+
+export default NextButton = ({disabled, text, onPress}) => {
+  return (
+    <TouchableHighlight
+      onPress={onPress}
+      disabled={disabled}
+      style={[disabled ? styles.disablebtn : styles.ablebtn, styles.btn]}>
+      <Text
+        style={[
+          styles.text,
+          disabled ? styles.disabledbtntext : styles.abledbtntext,
+        ]}>
+        {text}
+      </Text>
+    </TouchableHighlight>
+  );
+};

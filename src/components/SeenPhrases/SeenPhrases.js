@@ -1,17 +1,7 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import {SafeAreaView, View, StyleSheet, Text} from 'react-native';
 import Listitem from '../ListItem/ListItem';
-
-export default function SeenPhrase({}) {
-  return (
-    <SafeAreaView style={styles.container}>
-      <View>
-        <Text style={styles.text}>Seen phrases:</Text>
-        <Listitem text={'35 words and phrases'} onRowPress={() => {}} />
-      </View>
-    </SafeAreaView>
-  );
-}
+import {GlobalContext} from '../../globalContext/GlobalContext';
 
 const styles = StyleSheet.create({
   container: {
@@ -28,3 +18,19 @@ const styles = StyleSheet.create({
     marginBottom: 15,
   },
 });
+
+export default function SeenPhrase() {
+  const {state} = useContext(GlobalContext);
+  const {seenPhrases} = state;
+  return (
+    <SafeAreaView style={styles.container}>
+      <View>
+        <Text style={styles.text}>Seen phrases:</Text>
+        <Listitem
+          text={(seenPhrases.length, 'words and phrases')}
+          onRowPress={() => {}}
+        />
+      </View>
+    </SafeAreaView>
+  );
+}

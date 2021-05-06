@@ -1,16 +1,6 @@
 import React from 'react';
 import {StyleSheet, Text, TouchableOpacity} from 'react-native';
 
-export default function LanguageSwitcherButton({onPress, children}) {
-  return (
-    <TouchableOpacity style={styles.btnContainerStyle} onPress={onPress}>
-      <Text style={[styles.textStyle, styles.leftText]}>EN</Text>
-      {children}
-      <Text style={[styles.textStyle, styles.rightText]}>MA</Text>
-    </TouchableOpacity>
-  );
-}
-
 const styles = StyleSheet.create({
   btnContainerStyle: {
     width: 90,
@@ -37,3 +27,13 @@ const styles = StyleSheet.create({
     paddingLeft: 5,
   },
 });
+
+export default function LanguageSwitcherButton({onPress, children}) {
+  return (
+    <TouchableOpacity style={styles.btnContainerStyle} onPress={onPress}>
+      <Text style={[styles.textStyle, styles.leftText]}>EN</Text>
+      {children}
+      <Text style={[styles.textStyle, styles.rightText]}>MA</Text>
+    </TouchableOpacity>
+  );
+}

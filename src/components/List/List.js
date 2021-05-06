@@ -10,9 +10,30 @@ import {
 import Listitem from '../ListItem/ListItem';
 import {GlobalContext} from '../../globalContext/GlobalContext';
 
-function List({navigation, isEnglish}) {
-  const {state} = useContext(GlobalContext);
-  const {categories} = state;
+const styles = StyleSheet.create({
+  lists: {
+    borderWidth: 1,
+    borderRadius: 3,
+    borderStyle: 'solid',
+    borderColor: '#E5E5E5',
+    marginLeft: 23,
+    marginRight: 23,
+    height: 384,
+  },
+  title: {
+    fontSize: 18,
+    marginLeft: 23,
+    lineHeight: 22,
+    color: '#111827',
+    marginBottom: 15,
+    fontWeight: '600',
+    fontStyle: 'normal',
+    fontFamily: 'Inter',
+  },
+});
+
+export default function List({navigation, isEnglish}) {
+  const {state, dispatch} = useContext(GlobalContext);
 
   return (
     <SafeAreaView>
@@ -20,13 +41,13 @@ function List({navigation, isEnglish}) {
       <View>
         <FlatList
           style={styles.lists}
-          data={categories}
-          renderItem={({item, index}) => (
+          data={state.categories}
+          renderItem={({item}) => (
             <ScrollView>
               <Listitem
                 text={isEnglish ? item.name.ma : item.name.en}
                 onPress={() =>
-                  navigation.navigate('Learning', {
+                  navigation.navigate('LearningScreen', {
                     text: `${item.name.en}`,
                     id: `${item.id}`,
                   })
@@ -40,26 +61,3 @@ function List({navigation, isEnglish}) {
     </SafeAreaView>
   );
 }
-
-export default List;
-
-const styles = StyleSheet.create({
-  lists: {
-    borderWidth: 1,
-    borderRadius: 3,
-    borderStyle: 'solid',
-    borderColor: '#E5E5E5',
-    marginLeft: 23,
-    marginRight: 23,
-  },
-  title: {
-    fontSize: 18,
-    marginLeft: 23,
-    lineHeight: 22,
-    color: '#111827',
-    marginBottom: 15,
-    fontWeight: '600',
-    fontStyle: 'normal',
-    fontFamily: 'Inter',
-  },
-});

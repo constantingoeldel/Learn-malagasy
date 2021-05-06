@@ -6,7 +6,18 @@ import Back from '../icons/back.svg';
 import Switch from '../icons/switch.svg';
 import Switchcolor from '../icons/switchcolor.svg';
 
-const LearningBtns = ({navigation}) => {
+const styles = StyleSheet.create({
+  btn: {
+    marginRight: 10,
+  },
+  btns: {
+    marginTop: 35,
+    flexDirection: 'row',
+    marginBottom: 65,
+  },
+});
+
+export default function LearningBtns({navigation}) {
   return (
     <SafeAreaView style={styles.btns}>
       <View style={styles.btn}>
@@ -26,17 +37,4 @@ const LearningBtns = ({navigation}) => {
       </View>
     </SafeAreaView>
   );
-};
-
-const styles = StyleSheet.create({
-  btn: {
-    marginRight: 10,
-  },
-  btns: {
-    marginTop: 35,
-    flexDirection: 'row',
-    marginBottom: 65,
-  },
-});
-
-export default LearningBtns;
+}

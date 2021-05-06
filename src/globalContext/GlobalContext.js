@@ -7,10 +7,10 @@ const GlobalContext = React.createContext();
 
 function reducer(state, action) {
   switch (action.type) {
-    case 'FIND_ANSWER': {
+    case 'GET_PHRASE_TO_LEARN': {
       return {
         ...state,
-        answer: action.payload,
+        phraseToLearn: action.payload,
       };
     }
     default: {
@@ -22,6 +22,9 @@ function reducer(state, action) {
 const initialState = {
   categories: categories,
   phrases: phrases,
+  seenPhrases: [],
+  learntPhrases: [],
+  phraseToLearn: {},
 };
 
 function ContextProvider(props) {

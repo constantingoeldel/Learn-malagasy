@@ -3,19 +3,6 @@ import ActionButton from '../ActionButton/ActionButton.js';
 import Vect1 from '../../icons/Vect1.svg';
 import {Text, StyleSheet, SafeAreaView, TouchableOpacity} from 'react-native';
 
-const Listitem = ({text, onPress}) => {
-  return (
-    <SafeAreaView style={styles.container}>
-      <TouchableOpacity style={styles.list} onPress={onPress}>
-        <Text style={styles.text}>{text}</Text>
-        <ActionButton text={'Learn'} textColor="#06B6D4" onPress={onPress}>
-          <Vect1 />
-        </ActionButton>
-      </TouchableOpacity>
-    </SafeAreaView>
-  );
-};
-
 const styles = StyleSheet.create({
   container: {
     borderBottomWidth: 1,
@@ -43,4 +30,15 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Listitem;
+export default function Listitem({text, onPress}) {
+  return (
+    <SafeAreaView style={styles.container}>
+      <TouchableOpacity style={styles.list} onPress={onPress}>
+        <Text style={styles.text}>{text}</Text>
+        <ActionButton text={'Learn'} textColor="#06B6D4" onPress={onPress}>
+          <Vect1 />
+        </ActionButton>
+      </TouchableOpacity>
+    </SafeAreaView>
+  );
+}

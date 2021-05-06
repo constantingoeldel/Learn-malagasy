@@ -1,13 +1,6 @@
 import React from 'react';
 import {StyleSheet} from 'react-native';
 import {TouchableHighlight} from 'react-native';
-export default ToolButton = ({onPress, children = ''}) => {
-  return (
-    <TouchableHighlight onPress={onPress} style={styles.btn}>
-      {children}
-    </TouchableHighlight>
-  );
-};
 
 const styles = StyleSheet.create({
   btn: {
@@ -19,3 +12,11 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 });
+
+export default ToolButton = ({onPress, children = ''}) => {
+  return (
+    <TouchableHighlight onPress={onPress} style={styles.btn}>
+      {children}
+    </TouchableHighlight>
+  );
+};

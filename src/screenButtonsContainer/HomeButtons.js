@@ -8,7 +8,19 @@ import Correct from '../icons/correct.svg';
 import DoubleCorrect from '../icons/doublecorrect.svg';
 import Switchcolor from '../icons/switchcolor.svg';
 
-const HomeBtns = ({setIsEnglish}) => {
+const styles = StyleSheet.create({
+  btn: {
+    marginRight: 10,
+  },
+  btns: {
+    marginTop: 35,
+    marginLeft: 23,
+    flexDirection: 'row',
+    marginBottom: 65,
+  },
+});
+
+export default function HomeBtns({setIsEnglish}) {
   return (
     <SafeAreaView style={styles.btns}>
       <View style={styles.btn}>
@@ -38,18 +50,4 @@ const HomeBtns = ({setIsEnglish}) => {
       </View>
     </SafeAreaView>
   );
-};
-
-const styles = StyleSheet.create({
-  btn: {
-    marginRight: 10,
-  },
-  btns: {
-    marginTop: 35,
-    marginLeft: 23,
-    flexDirection: 'row',
-    marginBottom: 65,
-  },
-});
-
-export default HomeBtns;
+}
