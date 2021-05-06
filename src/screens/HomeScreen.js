@@ -3,7 +3,7 @@ import List from '../components/List/List';
 import HomeButtons from '../containers/HomeButtons';
 import {SafeAreaView, StyleSheet, View} from 'react-native';
 
-const HomeScreen = ({navigation}) => {
+function HomeScreen({navigation}) {
   const [isEnglish, setIsEnglish] = useState(false);
 
   return (
@@ -16,7 +16,7 @@ const HomeScreen = ({navigation}) => {
       </View>
     </SafeAreaView>
   );
-};
+}
 
 const styles = StyleSheet.create({
   space: {
