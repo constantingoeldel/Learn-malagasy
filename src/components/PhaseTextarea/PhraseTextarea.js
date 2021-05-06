@@ -1,5 +1,6 @@
 import React from 'react';
 import {TextInput, SafeAreaView, StyleSheet} from 'react-native';
+
 const styles = StyleSheet.create({
   container: {
     height: 100,
@@ -23,11 +24,8 @@ const styles = StyleSheet.create({
     lineHeight: 24.3,
   },
 });
-export default function PhraseTextarea({
-  phrase,
-  editable,
-  onChange = () => null,
-}) {
+
+export default function PhraseTextarea({phrase, editable, onChange}) {
   return (
     <SafeAreaView style={styles.container}>
       <TextInput

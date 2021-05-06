@@ -6,12 +6,11 @@
  * @flow strict-local
  */
 import React from 'react';
-import Learning from './src/screens/Learning';
-import HomeScreen from './src/screens/HomeScreen';
-import AddScreen from './src/screens/AddScreen';
+import LearningScreen from './src/screenNavigation/LearningScreen';
+import HomeScreen from './src/screenNavigation/HomeScreen';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
-import {ContextProvider} from './src/GlobalContext/GlobalContext';
+import {ContextProvider} from './src/globalContext/GlobalContext';
 
 const Stack = createStackNavigator();
 
@@ -24,8 +23,7 @@ function App() {
             headerShown: false,
           }}>
           <Stack.Screen name="HomeScreen" component={HomeScreen} />
-          <Stack.Screen name="Learning" component={Learning} />
-          <Stack.Screen name="AddScreen" component={AddScreen} />
+          <Stack.Screen name="LearningScreen" component={LearningScreen} />
         </Stack.Navigator>
       </NavigationContainer>
     </ContextProvider>
