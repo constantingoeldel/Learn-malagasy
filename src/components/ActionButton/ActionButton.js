@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import Vect1 from '../../icons/Vect1.svg';
 import Vect2 from '../../icons/Vect2.svg';
 import Vect3 from '../../icons/Vect3.svg';
@@ -38,15 +37,3 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
 });
-
-Button.defaultProps = {
-  text: null,
-  onPress: () => {},
-  children: null,
-};
-
-Button.propTypes = {
-  text: PropTypes.node,
-  onPress: PropTypes.func,
-  children: PropTypes.node,
-};

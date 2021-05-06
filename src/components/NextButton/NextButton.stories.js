@@ -1,26 +1,35 @@
 import React from 'react';
 import NextButton from './NextButton';
 import {storiesOf} from '@storybook/react-native';
-import {Text, StyleSheet, View} from 'react-native';
+import {View} from 'react-native';
 
 storiesOf('NextButton', module)
   .addDecorator(getStory => <View>{getStory()}</View>)
-  .add('Addabledbtn', () => (
-    <NextButton onPress={() => alert('clicked abled')} disabled={false}>
-      <Text style={styles.abledbtntext}>Add</Text>
-    </NextButton>
+  .add('AddAbledBtn', () => (
+    <NextButton
+      text={'Add'}
+      disabled={false}
+      onPress={() => alert('clicked abled')}
+    />
   ))
-  .add('Adddisabledbtn', () => (
-    <NextButton disabled={true}>
-      <Text style={styles.disabledbtntext}>Add</Text>
-    </NextButton>
+  .add('AddDisabledBtn', () => (
+    <NextButton
+      text={'Add'}
+      disabled={true}
+      onPress={() => alert('clicked disabled')}
+    />
+  ))
+  .add('NextBtn', () => (
+    <NextButton
+      text={'Next'}
+      disabled={false}
+      onPress={() => alert('clicked Next')}
+    />
+  ))
+  .add('Reshuffle', () => (
+    <NextButton
+      text={'Reshuffle'}
+      disabled={false}
+      onPress={() => alert('clicked Reshuffle')}
+    />
   ));
-
-const styles = StyleSheet.create({
-  abledbtntext: {
-    color: '#FFFFFF',
-  },
-  disabledbtntext: {
-    color: '#06B6D4',
-  },
-});

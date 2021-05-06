@@ -8,11 +8,12 @@ import {
   Text,
 } from 'react-native';
 import Listitem from '../ListItem/ListItem';
-import {GlobalContext} from '../GlobalContext/Context';
+import {GlobalContext} from '../../GlobalContext/GlobalContext';
 
-export default function List({navigation, isEnglish}) {
+function List({navigation, isEnglish}) {
   const {state} = useContext(GlobalContext);
   const {categories} = state;
+
   return (
     <SafeAreaView>
       <Text style={styles.title}>Select a category:</Text>
@@ -26,7 +27,7 @@ export default function List({navigation, isEnglish}) {
                 text={isEnglish ? item.name.ma : item.name.en}
                 onPress={() =>
                   navigation.navigate('Learning', {
-                    text: `${item.name.mg}`,
+                    text: `${item.name.en}`,
                     id: `${item.id}`,
                   })
                 }
@@ -39,6 +40,8 @@ export default function List({navigation, isEnglish}) {
     </SafeAreaView>
   );
 }
+
+export default List;
 
 const styles = StyleSheet.create({
   lists: {

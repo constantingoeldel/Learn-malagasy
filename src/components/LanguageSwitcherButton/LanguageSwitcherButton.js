@@ -1,8 +1,7 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import {StyleSheet, Text, TouchableOpacity} from 'react-native';
 
-export default function LanguageSwitcherButton({onPress = () => {}, children}) {
+export default function LanguageSwitcherButton({onPress, children}) {
   return (
     <TouchableOpacity style={styles.btnContainerStyle} onPress={onPress}>
       <Text style={[styles.textStyle, styles.leftText]}>EN</Text>
@@ -38,13 +37,3 @@ const styles = StyleSheet.create({
     paddingLeft: 5,
   },
 });
-
-LanguageSwitcherButton.defaultProps = {
-  onPress: () => {},
-  children: null,
-};
-
-LanguageSwitcherButton.propTypes = {
-  onPress: PropTypes.func,
-  children: PropTypes.node,
-};
