@@ -29,7 +29,7 @@ export default function HomeBtns({setIsEnglish}) {
         </ToolButton>
       </View>
       <View style={styles.btn}>
-        <LanguageSwitcherButton onPress={() => setIsEnglish(false)}>
+        <LanguageSwitcherButton onPress={() => alert('I am Plus btn')}>
           <Switch />
         </LanguageSwitcherButton>
       </View>

@@ -12,15 +12,13 @@ const styles = StyleSheet.create({
 });
 
 export default function HomeScreen({navigation}) {
-  const [isEnglish, setIsEnglish] = useState(false);
-
   return (
     <SafeAreaView>
       <View>
-        <HomeButtons setIsEnglish={setIsEnglish} />
+        <HomeButtons />
       </View>
       <View style={styles.space}>
-        <List navigation={navigation} isEnglish={isEnglish} />
+        <List navigation={navigation} />
       </View>
       <View style={styles.space}>
         <SeenPhrases />

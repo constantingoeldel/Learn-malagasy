@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
 });
 
 export default function List({navigation}) {
-  const {state, dispatch} = useContext(GlobalContext);
+  const {state} = useContext(GlobalContext);
 
   return (
     <SafeAreaView>
@@ -48,7 +48,6 @@ export default function List({navigation}) {
                 text={item.name.en}
                 onPress={() =>
                   navigation.navigate('LearningScreen', {
-                    item: item,
                     text: `${item.name.en}`,
                     id: `${item.id}`,
                   })
