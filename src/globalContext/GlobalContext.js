@@ -1,16 +1,16 @@
 import React, {useReducer} from 'react';
-
-import {categories} from '../data/categories.json';
 import {phrases} from '../data/phrases.json';
-
+import {categories} from '../data/categories.json';
 const GlobalContext = React.createContext();
 
 function reducer(state, action) {
   switch (action.type) {
-    case 'GET_PHRASE_TO_LEARN': {
+    case 'PHRASE_TO_LEARN': {
       return {
         ...state,
-        phraseToLearn: action.payload,
+        phraseToLearn: action.phrase,
+        categoryToLearn: action.category,
+        showNextButton: action.showNextBtn,
       };
     }
     default: {
@@ -25,11 +25,12 @@ const initialState = {
   seenPhrases: [],
   learntPhrases: [],
   phraseToLearn: {},
+  categoryToLearn: {},
+  showNextButton: false,
 };
 
 function ContextProvider(props) {
   const [state, dispatch] = useReducer(reducer, initialState);
-
   return (
     <GlobalContext.Provider
       value={{

@@ -1,7 +1,7 @@
 import React from 'react';
+import Listitem from './ListItem';
 import {View} from 'react-native';
 import {storiesOf} from '@storybook/react-native';
-import Listitem from './ListItem';
 
 storiesOf('Listitem', module)
   .addDecorator(story => <View>{story()}</View>)

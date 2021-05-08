@@ -1,12 +1,12 @@
 import React from 'react';
-import {SafeAreaView, StyleSheet, View} from 'react-native';
-import ToolButton from '../components/ToolButton/ToolButton';
-import LanguageSwitcherButton from '../components/LanguageSwitcherButton/LanguageSwitcherButton';
 import Plus from '../icons/plus.svg';
 import Switch from '../icons/switch.svg';
 import Correct from '../icons/correct.svg';
-import DoubleCorrect from '../icons/doublecorrect.svg';
 import Switchcolor from '../icons/switchcolor.svg';
+import DoubleCorrect from '../icons/doublecorrect.svg';
+import {SafeAreaView, StyleSheet, View} from 'react-native';
+import ToolButton from '../components/ToolButton/ToolButton';
+import LanguageSwitcherButton from '../components/LanguageSwitcherButton/LanguageSwitcherButton';
 
 const styles = StyleSheet.create({
   btn: {

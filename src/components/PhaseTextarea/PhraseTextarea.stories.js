@@ -1,7 +1,8 @@
 import React from 'react';
 import {View} from 'react-native';
-import {storiesOf} from '@storybook/react-native';
 import PhraseTextarea from './PhraseTextarea';
+import {storiesOf} from '@storybook/react-native';
+
 function Edit() {
   const [text, setText] = React.useState('');
   return (

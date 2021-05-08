@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
 export default NextButton = ({disabled, text, onPress}) => {
   return (
     <TouchableHighlight
-      onPress={onPress}
+      onPress={disabled ? () => null : onPress}
       disabled={disabled}
       style={[disabled ? styles.disablebtn : styles.ablebtn, styles.btn]}>
       <Text

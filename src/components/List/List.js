@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
   },
 });
 
-export default function List({navigation, isEnglish}) {
+export default function List({navigation, isEnglish}, disabled) {
   const {state, dispatch} = useContext(GlobalContext);
 
   return (
@@ -46,8 +46,10 @@ export default function List({navigation, isEnglish}) {
             <ScrollView>
               <Listitem
                 text={isEnglish ? item.name.ma : item.name.en}
+                disabled={disabled}
                 onPress={() =>
                   navigation.navigate('LearningScreen', {
+                    item: item,
                     text: `${item.name.en}`,
                     id: `${item.id}`,
                   })

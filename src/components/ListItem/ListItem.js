@@ -1,6 +1,6 @@
-import React from 'react';
-import ActionButton from '../ActionButton/ActionButton.js';
+import React, {useContext} from 'react';
 import Vect1 from '../../icons/Vect1.svg';
+import ActionButton from '../ActionButton/ActionButton.js';
 import {Text, StyleSheet, SafeAreaView, TouchableOpacity} from 'react-native';
 
 const styles = StyleSheet.create({
@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
   },
 });
 
-export default function Listitem({text, onPress}) {
+export default function Listitem({text, onPress}, disabled) {
   return (
     <SafeAreaView style={styles.container}>
       <TouchableOpacity style={styles.list} onPress={onPress}>
