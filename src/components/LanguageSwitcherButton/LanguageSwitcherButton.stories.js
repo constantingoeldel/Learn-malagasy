@@ -1,8 +1,8 @@
 import React from 'react';
-import Switch from '../../icons/switch.svg';
-import LanguageSwitcherButton from './LanguageSwitcherButton.js';
-import {storiesOf} from '@storybook/react-native';
 import {View} from 'react-native';
+import Switch from '../../icons/switch.svg';
+import {storiesOf} from '@storybook/react-native';
+import LanguageSwitcherButton from './LanguageSwitcherButton.js';
 
 storiesOf('LanguageSwitcherButton', module)
   .addDecorator(getStory => <View>{getStory()}</View>)

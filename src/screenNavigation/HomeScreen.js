@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
 import List from '../components/List/List';
-import HomeButtons from '../screenButtonsContainer/HomeButtons';
 import {SafeAreaView, StyleSheet, View} from 'react-native';
 import SeenPhrases from '../components/SeenPhrases/SeenPhrases';
+import HomeButtons from '../screenButtonsContainer/HomeButtons';
 import LearntPhrases from '../components/LearntPhrases/LearntPhrases';
 
 const styles = StyleSheet.create({

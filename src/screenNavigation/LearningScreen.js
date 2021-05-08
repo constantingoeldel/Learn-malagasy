@@ -1,9 +1,10 @@
-import React, {useContext, useEffect} from 'react';
+import React, {useContext} from 'react';
 import Shuffle from '../utils/Reshuffle';
 import Listitem from '../components/ListItem/ListItem';
-import LearningButtons from '../screenButtonsContainer/LearningButtons';
+import NextButton from '../components/NextButton/NextButton';
 import {GlobalContext} from '../globalContext/GlobalContext';
 import {SafeAreaView, StyleSheet, View, Text} from 'react-native';
+import LearningButtons from '../screenButtonsContainer/LearningButtons';
 import PhraseTextarea from '../components/PhaseTextarea/PhraseTextarea';
 
 const styles = StyleSheet.create({
@@ -33,8 +34,9 @@ const styles = StyleSheet.create({
 export default function Learning({navigation, route}) {
   const {state, dispatch} = useContext(GlobalContext);
   const {phrases} = state;
-  const {categories} = state;
   const id = route.params.id;
+  const {categories} = state;
+  const {showNextButton} = state;
   const category = route.params.text;
 
   const singleCategories = categories?.find(item => item.id === id);
@@ -68,6 +70,8 @@ export default function Learning({navigation, route}) {
         <Text style={[styles.text, styles.categoryText]}>
           Category: {category}
         </Text>
+      </View>
+      <View>
         <Text style={[styles.text, styles.phraseText]}>The phrase:</Text>
         <PhraseTextarea editable={false} phrase={singleOption?.name.mg} />
       </View>
@@ -76,11 +80,36 @@ export default function Learning({navigation, route}) {
         {randomSolutions.map((item, index) => {
           return (
             <View key={index}>
-              <Listitem text={item} onPress={() => alert('I am here')} />
+              <Listitem
+                text={item}
+                onPress={() => {
+                  showNextButton
+                    ? null
+                    : dispatch({
+                        type: 'PHRASE_TO_LEARN',
+                        phrase: singleOption,
+                        category: category,
+                        showNextBtn: true,
+                      });
+                }}
+              />
             </View>
           );
         })}
       </View>
+      {showNextButton ? (
+        <View>
+          <NextButton
+            text={'Next'}
+            onPress={() => {
+              dispatch({
+                type: 'PHRASE_TO_LEARN',
+                showNextBtn: false,
+              });
+            }}
+          />
+        </View>
+      ) : null}
     </SafeAreaView>
   );
 }

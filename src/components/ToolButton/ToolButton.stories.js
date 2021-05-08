@@ -1,10 +1,10 @@
 import React from 'react';
-import Back from '../../icons/back.svg';
+import {View} from 'react-native';
 import ToolButton from './ToolButton';
+import Back from '../../icons/back.svg';
 import PlusIcon from '../../icons/plus.svg';
 import Correct from '../../icons/correct.svg';
 import Switch from '../../icons/switchcolor.svg';
-import {View} from 'react-native';
 import {storiesOf} from '@storybook/react-native';
 import Doublecorrect from '../../icons/doublecorrect.svg';
 

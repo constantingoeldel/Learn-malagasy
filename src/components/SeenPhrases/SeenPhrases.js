@@ -1,7 +1,7 @@
 import React, {useContext} from 'react';
-import {SafeAreaView, View, StyleSheet, Text} from 'react-native';
 import Listitem from '../ListItem/ListItem';
 import {GlobalContext} from '../../globalContext/GlobalContext';
+import {SafeAreaView, View, StyleSheet, Text} from 'react-native';
 
 const styles = StyleSheet.create({
   container: {
