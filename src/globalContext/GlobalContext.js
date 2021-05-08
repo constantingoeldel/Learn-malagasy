@@ -29,7 +29,7 @@ const initialState = {
   showNextButton: false,
 };
 
-function ContextProvider(props) {
+function ContextProvider({children}) {
   const [state, dispatch] = useReducer(reducer, initialState);
   return (
     <GlobalContext.Provider
@@ -37,7 +37,7 @@ function ContextProvider(props) {
         state,
         dispatch,
       }}>
-      {props.children}
+      {children}
     </GlobalContext.Provider>
   );
 }

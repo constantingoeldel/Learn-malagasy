@@ -8,6 +8,11 @@ import LearningButtons from '../screenButtonsContainer/LearningButtons';
 import PhraseTextarea from '../components/PhaseTextarea/PhraseTextarea';
 
 const styles = StyleSheet.create({
+  nextButton: {
+    marginTop: 40,
+    flexDirection: 'row',
+    alignSelf: 'center',
+  },
   phraseSection: {
     marginBottom: 37,
   },
@@ -58,7 +63,7 @@ export default function Learning({navigation, route}) {
   const singleItem = groupItems[Math.floor(Math.random() * groupItems.length)];
   const singleOption = phrases.find(itm => itm.id === singleItem);
 
-  const ItemsArray = [Item1, Item4, Item2, Item3];
+  const ItemsArray = [Item3, Item4, Item2, Item1];
   const randomSolutions = Shuffle(ItemsArray);
 
   return (
@@ -71,7 +76,7 @@ export default function Learning({navigation, route}) {
           Category: {category}
         </Text>
       </View>
-      <View>
+      <View style={styles.phraseSection}>
         <Text style={[styles.text, styles.phraseText]}>The phrase:</Text>
         <PhraseTextarea editable={false} phrase={singleOption?.name.mg} />
       </View>
@@ -83,33 +88,31 @@ export default function Learning({navigation, route}) {
               <Listitem
                 text={item}
                 onPress={() => {
-                  showNextButton
-                    ? null
-                    : dispatch({
-                        type: 'PHRASE_TO_LEARN',
-                        phrase: singleOption,
-                        category: category,
-                        showNextBtn: true,
-                      });
+                  dispatch({
+                    type: 'PHRASE_TO_LEARN',
+                    phrase: singleOption,
+                    category: category,
+                    showNextBtn: true,
+                  });
                 }}
               />
             </View>
           );
         })}
       </View>
-      {showNextButton ? (
-        <View>
+      <View style={styles.nextButton}>
+        {showNextButton ? (
           <NextButton
             text={'Next'}
             onPress={() => {
               dispatch({
-                type: 'PHRASE_TO_LEARN',
+                type: 'SHOW_NEXT_BUTTON',
                 showNextBtn: false,
               });
             }}
           />
-        </View>
-      ) : null}
+        ) : null}
+      </View>
     </SafeAreaView>
   );
 }
