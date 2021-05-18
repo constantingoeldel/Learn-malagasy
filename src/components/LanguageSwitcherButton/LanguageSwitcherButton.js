@@ -29,6 +29,8 @@ const styles = StyleSheet.create({
 });
 
 export default function LanguageSwitcherButton({onPress, children}) {
+  // renaming "children" to "icon" increases intuitive understanding
+  // The text that is displayed should be passed as props
   return (
     <TouchableOpacity style={styles.btnContainerStyle} onPress={onPress}>
       <Text style={[styles.textStyle, styles.leftText]}>EN</Text>

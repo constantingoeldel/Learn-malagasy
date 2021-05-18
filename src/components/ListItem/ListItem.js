@@ -31,14 +31,13 @@ const styles = StyleSheet.create({
 });
 
 export default function Listitem({text, onPress}) {
+  // text on the action button should be a prop of listitem as it is different between the learning and the home screen
+  // Long text should be truncated
   return (
     <SafeAreaView style={styles.container}>
       <TouchableOpacity style={styles.list} onPress={onPress}>
         <Text style={styles.text}>{text}</Text>
-        <ActionButton
-          text={'Learn'}
-          textColor="#06B6D4"
-          onPress={onPress}></ActionButton>
+        <ActionButton text={'Learn'} textColor="#06B6D4" onPress={onPress} />
       </TouchableOpacity>
     </SafeAreaView>
   );

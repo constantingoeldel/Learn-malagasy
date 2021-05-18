@@ -16,6 +16,7 @@ const styles = StyleSheet.create({
     fontStyle: 'normal',
   },
   btn: {
+    // Width hardcoded leads to truncated word Reshuffle
     width: 90,
     margin: 20,
     height: 40,
@@ -35,7 +36,7 @@ const styles = StyleSheet.create({
   },
 });
 
-export default NextButton = ({disabled, text, onPress}) => {
+export default ({disabled, text, onPress}) => {
   return (
     <TouchableHighlight
       onPress={disabled ? () => null : onPress}

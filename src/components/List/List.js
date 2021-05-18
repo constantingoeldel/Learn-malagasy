@@ -1,12 +1,5 @@
 import React, {useContext} from 'react';
-import {
-  SafeAreaView,
-  View,
-  StyleSheet,
-  FlatList,
-  ScrollView,
-  Text,
-} from 'react-native';
+import {SafeAreaView, View, StyleSheet, FlatList, Text} from 'react-native';
 import Listitem from '../ListItem/ListItem';
 import {GlobalContext} from '../../globalContext/GlobalContext';
 
@@ -34,7 +27,7 @@ const styles = StyleSheet.create({
 
 export default function List({navigation}) {
   const {state, dispatch} = useContext(GlobalContext);
-
+  // Scrollview inside each item is unneccessary
   return (
     <SafeAreaView>
       <Text style={styles.title}>Select a category:</Text>
@@ -43,18 +36,16 @@ export default function List({navigation}) {
           style={styles.lists}
           data={state.categories}
           renderItem={({item}) => (
-            <ScrollView>
-              <Listitem
-                text={item.name.en}
-                onPress={() =>
-                  navigation.navigate('LearningScreen', {
-                    item: item,
-                    text: `${item.name.en}`,
-                    id: `${item.id}`,
-                  })
-                }
-              />
-            </ScrollView>
+            <Listitem
+              text={item.name.en}
+              onPress={() =>
+                navigation.navigate('LearningScreen', {
+                  item: item,
+                  text: `${item.name.en}`,
+                  id: `${item.id}`,
+                })
+              }
+            />
           )}
           keyExtractor={item => item.id}
         />

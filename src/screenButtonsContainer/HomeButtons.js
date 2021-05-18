@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
     marginBottom: 65,
   },
 });
-
+// These files can be refactored
 export default function HomeBtns({setIsEnglish}) {
   return (
     <SafeAreaView style={styles.btns}>

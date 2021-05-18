@@ -38,17 +38,16 @@ const styles = StyleSheet.create({
 
 export default function Learning({navigation, route}) {
   const {state, dispatch} = useContext(GlobalContext);
-  const {phrases} = state;
+  // Descructuring in one line
+  const {phrases, categories, showNextButton} = state;
   const id = route.params.id;
-  const {categories} = state;
-  const {showNextButton} = state;
   const category = route.params.text;
 
   const singleCategories = categories?.find(item => item.id === id);
   const phraseId = singleCategories.phrasesIds.map(item => {
     return item;
   });
-
+  // not DRY => wet
   const item1 = phraseId[Math.floor(Math.random() * phraseId.length)];
   const item2 = phraseId[Math.floor(Math.random() * phraseId.length)];
   const item3 = phraseId[Math.floor(Math.random() * phraseId.length)];
@@ -65,7 +64,7 @@ export default function Learning({navigation, route}) {
 
   const ItemsArray = [Item3, Item4, Item2, Item1];
   const randomSolutions = Shuffle(ItemsArray);
-
+  // Questions should not repeat in a run, when all the questions in a category are an answered once, a reshuffle message should be shown. Answer options should be unique.
   return (
     <SafeAreaView style={styles.container}>
       <View>

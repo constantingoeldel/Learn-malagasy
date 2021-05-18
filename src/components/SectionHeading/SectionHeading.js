@@ -20,6 +20,7 @@ const styles = StyleSheet.create({
 });
 
 export default function SectionHeading({text}) {
+  // This is not the section heading but the main header of the app, this would be the correct element: https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FEjoxoV3NBCmOHSQHni7hU2%2FMalagasy-App%3Fnode-id%3D13%253A206
   return (
     <SafeAreaView>
       <Text style={styles.textHeader}>{text}</Text>
